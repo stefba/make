@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<title>Make</title>
+<style>
+    body {
+        font-size:3rem;
+        white-space:pre-wrap;
+        font-family:monospace;
+    }
+    .red {
+        background:red;
+    }
+    .green {
+        background:green;
+    }
+</style>
+{{if .Err}}
+Last build failed. Starting a new one.
+
+
+<span class="red">Error:</span>
+
+{{.Out}}
+{{else}}
+{{.Status}}
+
+
+{{if .Out}}<span class="green">Last build:</span>{{else}}Last build: {{end}}
+
+{{.Out}}
+{{end}}
